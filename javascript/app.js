@@ -2,6 +2,9 @@ const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
 const brushWidth =document.querySelector('#brush-width')
 const brushColor = document.querySelector('#color-picker')
+const brush = document.querySelector('.brush')
+const eraser = document.querySelector('.eraser')
+
 
 let isDrawing = false
 let currenWidth = 5
@@ -42,3 +45,14 @@ brushWidth.addEventListener('change' ,()=>{
 brushColor.addEventListener('input', () => {
     currenColor = brushColor.value;
 });
+
+eraser.addEventListener('click', ()=>{
+    eraser.classList.add('active')
+    brush.classList.remove('active')
+    currenColor = 'white'
+})
+
+brush.addEventListener('click', ()=>{
+    brush.classList.add('active')
+    eraser.classList.remove('active')
+})
