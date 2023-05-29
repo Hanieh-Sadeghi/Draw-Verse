@@ -34,17 +34,17 @@ body {
 
 .tools {
     display: flex;
-    width: 83%;
+    width: 82%;
     justify-content: space-between;
     align-items: center;
 }
 
 #color-picker {
-    border-radius: 5px;
+    border-radius: 50%;
     overflow: hidden;
-    width: 50px;
-    height: 25px;
-    box-shadow: 0 0 1px rgb(98, 98, 98);
+    width: 20px;
+    height: 20px;
+    outline: 1px solid rgb(0, 0, 0);
     outline-offset: -1px;
 }
 
@@ -100,4 +100,21 @@ i {
 
 .active {
     color: rgb(172, 116, 251);
+}
+
+#saved-colors {
+    width: 130px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#saved-colors div {
+    border: 1px solid rgb(0, 0, 0);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 1px black;
 }
