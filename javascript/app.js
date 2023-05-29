@@ -14,6 +14,8 @@ let currenColor = ''
 window.addEventListener('load' , ()=>{ 
     canvas.width = canvas.offsetWidth
     canvas.height = canvas.offsetHeight
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 })
 
 function starDraw(){
@@ -60,7 +62,7 @@ brush.addEventListener('click', ()=>{
 })
 
 clearBtn.addEventListener('click', ()=>{
-    ctx.fillStyle = 'white';
+    // ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 });
 
