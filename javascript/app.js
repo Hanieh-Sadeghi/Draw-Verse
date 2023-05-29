@@ -9,6 +9,7 @@ window.addEventListener('load' , ()=>{
 
 function starDraw(){
     isDrawing = true
+    ctx.beginPath()
 }
 
 function drawing(e) {
