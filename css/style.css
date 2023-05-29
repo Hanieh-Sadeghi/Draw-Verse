@@ -73,3 +73,7 @@ label ,i {
     cursor: pointer;
 }
 
+.buttons .save{
+    background: rgb(172, 116, 251);
+    color: #fff;
+}
