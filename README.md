@@ -1,5 +1,4 @@
-
-    <h1>Art Canvas </h1>
+<h1>Art Canvas </h1>
 <p>
     In summary, the implemented digital painting is built using 
     HTML, CSS, and JavaScript. In this painting, you will be able to utilize 
