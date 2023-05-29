@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
 
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box ;
-    font-family: 'Rubik', sans-serif;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
 }
 
 body {
@@ -15,7 +15,7 @@ body {
     background: rgb(172, 116, 251);
 }
 
-.container{
+.container {
     width: 800px;
     height: 500px;
     background: #fff;
@@ -32,11 +32,21 @@ body {
     padding: 0 15px;
 }
 
-.tools{
+.tools {
     display: flex;
-    width: 70%;
+    width: 83%;
     justify-content: space-between;
     align-items: center;
+}
+
+#color-picker {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 20px;
+    height: 20px;
+    outline: 1px solid rgb(0, 0, 0);
+    /* box-shadow: 0 0 1px black; */
+    outline-offset: -1px;
 }
 
 .color {
@@ -60,12 +70,13 @@ input[type="color"]::-webkit-color-swatch {
     border: 1px solid lightgray;
 }
 
-label ,i {
+label,
+i {
     margin: 0 3px;
     cursor: pointer;
 }
 
-.buttons button{
+.buttons button {
     border: none;
     padding: 5px 10px;
     font-size: 16px;
@@ -73,12 +84,12 @@ label ,i {
     cursor: pointer;
 }
 
-.buttons .save{
+.buttons .save {
     background: rgb(172, 116, 251);
     color: #fff;
 }
 
-.clear:hover{
+.clear:hover {
     background-color: lightgray;
 }
 
@@ -88,6 +99,23 @@ label ,i {
     border-radius: 0 0 10px 10px;
 }
 
-.active{
+.active {
     color: rgb(172, 116, 251);
+}
+
+#saved-colors {
+    width: 130px;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#saved-colors div {
+    border: 1px solid rgb(0, 0, 0);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 1px black;
 }

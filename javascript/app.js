@@ -1,44 +1,60 @@
-const canvas = document.querySelector('canvas')
-const ctx = canvas.getContext('2d')
-const brushWidth =document.querySelector('#brush-width')
-const brushColor = document.querySelector('#color-picker')
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
+const brushWidth = document.querySelector("#brush-width");
+const brushColor = document.querySelector("#color-picker");
+const saveColor = ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff"];
+const saveColorsBtns = document.getElementsByClassName("saved-color__btn");
 
-let isDrawing = false
-let currenWidth = 5
-let currenColor = ''
+let isDrawing = false;
+let currenWidth = 5;
+let currenColor = "";
 
-window.addEventListener('load' , ()=>{ 
-    canvas.width = canvas.offsetWidth
-    canvas.height = canvas.offsetHeight
-})
+window.addEventListener("load", () => {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+});
 
-function starDraw(){
-    isDrawing = true
-    ctx.beginPath()
-    ctx.lineWidth = currenWidth
+function starDraw() {
+    isDrawing = true;
+    ctx.beginPath();
+    ctx.lineWidth = currenWidth;
 }
 
 function drawing(e) {
-    if(!isDrawing){
-        return
+    if (!isDrawing) {
+        return;
     }
-    ctx.lineTo(e.offsetX, e.offsetY)
-    ctx.strokeStyle = `${currenColor}`
-    ctx.stroke()
-
-} 
-
-function endDraw(){
-    isDrawing = false
+    ctx.lineTo(e.offsetX, e.offsetY);
+    ctx.strokeStyle = `${currenColor}`;
+    ctx.stroke();
 }
-canvas.addEventListener('mousedown', starDraw)
-canvas.addEventListener('mousemove', drawing)
-canvas.addEventListener('mouseup', endDraw)
 
-brushWidth.addEventListener('change' ,()=>{
-    currenWidth = brushWidth.value
-})
+function endDraw() {
+    isDrawing = false;
+}
+canvas.addEventListener("mousedown", starDraw);
+canvas.addEventListener("mousemove", drawing);
+canvas.addEventListener("mouseup", endDraw);
 
-brushColor.addEventListener('input', () => {
-    currenColor = brushColor.value;
+brushWidth.addEventListener("change", () => {
+    currenWidth = brushWidth.value;
 });
+
+brushColor.addEventListener("change", () => {
+    currenColor = brushColor.value;
+    saveColor.pop();
+    saveColor.unshift(brushColor.value);
+    for (let i in saveColorsBtns) {
+        try {
+            saveColorsBtns[i].style.background = saveColor[i];
+        } catch (error) {}
+    }
+});
+
+for (let i in saveColorsBtns) {
+    saveColorsBtns[i].addEventListener("click", () => {
+        console.log(saveColor[i]);
+        brushColor.value = saveColor[i];
+        currenColor = saveColor[i];
+    });
+}
