@@ -1,4 +1,4 @@
-# Draw-Verse
+
     <h1>Art Canvas </h1>
 <p>
     In summary, the implemented digital painting is built using 
