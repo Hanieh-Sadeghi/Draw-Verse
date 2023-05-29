@@ -5,6 +5,7 @@ const brushColor = document.querySelector('#color-picker')
 const brush = document.querySelector('.brush')
 const eraser = document.querySelector('.eraser')
 const clearBtn = document.querySelector('.clear')
+const saveBtn = document.querySelector('.save')
 
 let isDrawing = false
 let currenWidth = 5
@@ -62,3 +63,11 @@ clearBtn.addEventListener('click', ()=>{
     ctx.fillStyle = 'white';
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 });
+
+saveBtn.addEventListener('click', ()=>{
+    let link = document.createElement('a')
+    link.download = 'Art-Canvas.jpg'
+    link.href = canvas.toDataURL()
+    link.click()        
+}) 
+
