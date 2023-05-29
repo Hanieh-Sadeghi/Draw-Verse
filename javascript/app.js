@@ -2,10 +2,12 @@ const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 const brushWidth = document.querySelector("#brush-width");
 const brushColor = document.querySelector("#color-picker");
-const brush = document.querySelector('.brush')
-const eraser = document.querySelector('.eraser')
-const clearBtn = document.querySelector('.clear')
-const saveBtn = document.querySelector('.save')
+const saveColor = ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff"];
+const saveColorsBtns = document.getElementsByClassName("saved-color__btn");
+const brush = document.querySelector(".brush");
+const eraser = document.querySelector(".eraser");
+const clearBtn = document.querySelector(".clear");
+const saveBtn = document.querySelector(".save");
 
 let isDrawing = false;
 let currenWidth = 5;
@@ -14,9 +16,8 @@ let currenColor = "";
 window.addEventListener("load", () => {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
-    ctx.fillStyle = 'white';
+    ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
 });
 
 function starDraw() {
@@ -45,33 +46,45 @@ brushWidth.addEventListener("change", () => {
     currenWidth = brushWidth.value;
 });
 
-brushColor.addEventListener("input", () => {
+brushColor.addEventListener("change", () => {
     currenColor = brushColor.value;
-  
+    saveColor.pop();
+    saveColor.unshift(brushColor.value);
+    for (let i = 0; i < 5; i++) {
+        try {
+            saveColorsBtns[i].style.background = saveColor[i];
+        } catch (error) {}
+    }
 });
 
+for (let i = 0; i < 5; i++) {
+    saveColorsBtns[i].addEventListener("click", () => {
+        console.log(saveColor[i]);
+        brushColor.value = saveColor[i];
+        currenColor = saveColor[i];
+    });
+}
 
-eraser.addEventListener('click', ()=>{
-    eraser.classList.add('active')
-    brush.classList.remove('active')
-    currenColor = 'white'
-})
+eraser.addEventListener("click", () => {
+    eraser.classList.add("active");
+    brush.classList.remove("active");
+    currenColor = "white";
+});
 
-brush.addEventListener('click', ()=>{
-    brush.classList.add('active')
-    eraser.classList.remove('active')
-    currenColor = brushColor.value
-})
+brush.addEventListener("click", () => {
+    brush.classList.add("active");
+    eraser.classList.remove("active");
+    currenColor = brushColor.value;
+});
 
-clearBtn.addEventListener('click', ()=>{
-    ctx.fillStyle = 'white';
+clearBtn.addEventListener("click", () => {
+    ctx.fillStyle = "white";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 });
 
-saveBtn.addEventListener('click', ()=>{
-    let link = document.createElement('a')
-    link.download = 'Art-Canvas.jpg'
-    link.href = canvas.toDataURL()
-    link.click()        
-}) 
-
+saveBtn.addEventListener("click", () => {
+    let link = document.createElement("a");
+    link.download = "Art-Canvas.jpg";
+    link.href = canvas.toDataURL();
+    link.click();
+});
