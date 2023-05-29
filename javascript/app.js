@@ -1,10 +1,11 @@
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
 const brushWidth =document.querySelector('#brush-width')
-const brushColor = document.querySelector('#brush-color')
+const brushColor = document.querySelector('#color-picker')
 
 let isDrawing = false
 let currenWidth = 5
+let currenColor = ''
 
 window.addEventListener('load' , ()=>{ 
     canvas.width = canvas.offsetWidth
@@ -22,7 +23,9 @@ function drawing(e) {
         return
     }
     ctx.lineTo(e.offsetX, e.offsetY)
+    ctx.strokeStyle = `${currenColor}`
     ctx.stroke()
+
 } 
 
 function endDraw(){
@@ -35,3 +38,7 @@ canvas.addEventListener('mouseup', endDraw)
 brushWidth.addEventListener('change' ,()=>{
     currenWidth = brushWidth.value
 })
+
+brushColor.addEventListener('input', () => {
+    currenColor = brushColor.value;
+});
