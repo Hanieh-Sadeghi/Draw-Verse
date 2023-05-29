@@ -52,4 +52,24 @@ input[type="color"] {
     cursor: pointer;
 }
 
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: 1px solid loghtgray;
+}
+
+label ,i {
+    margin: 0 3px;
+    cursor: pointer;
+}
+
+.buttons button{
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
