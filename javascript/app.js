@@ -1,7 +1,11 @@
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext('2d')
+const brushWidth =document.querySelector('#brush-width')
+const brushColor = document.querySelector('#brush-color')
 
 let isDrawing = false
+let currenWidth = 5
+
 window.addEventListener('load' , ()=>{ 
     canvas.width = canvas.offsetWidth
     canvas.height = canvas.offsetHeight
@@ -10,6 +14,7 @@ window.addEventListener('load' , ()=>{
 function starDraw(){
     isDrawing = true
     ctx.beginPath()
+    ctx.lineWidth = currenWidth
 }
 
 function drawing(e) {
@@ -27,4 +32,6 @@ canvas.addEventListener('mousedown', starDraw)
 canvas.addEventListener('mousemove', drawing)
 canvas.addEventListener('mouseup', endDraw)
 
-
+brushWidth.addEventListener('change' ,()=>{
+    currenWidth = brushWidth.value
+})
