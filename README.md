@@ -80,7 +80,3 @@
     
 </ul>
 
-<p>
-    Thank you for using the Art Canvas-App! We hope it helps you stay organized and
-    efficient in managing your tasks.
-</p>
