@@ -30,7 +30,7 @@
     </li>
     <li>
         <p>
-            <strong>Save color settings :</strong> This digital painting application has the ability to save color settings. You can save your favorite colors, making it convenient to use them again in the future.
+            <strong>Save color settings :</strong> A feature that allows you to save 5 color histories and use them.
         </p>
     </li>
     <li>
