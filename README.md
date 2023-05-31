@@ -15,11 +15,6 @@
 <ul>
     <li>
         <p>
-            <strong>Clear the entire page :</strong> This feature allows you to erase all the lines and drawings at once, clearing the canvas for starting a new artwork.
-        </p>
-    </li>
-    <li>
-        <p>
             <strong>Eraser :</strong>  If you want to delete a line or make corrections, the eraser functionality enables you to remove specific parts of the drawing. You can use it to erase lines or areas that need to be modified.
         </p>
     </li>
