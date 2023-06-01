@@ -1,6 +1,6 @@
 <h1>Art Canvas </h1>
 <p>
-    In summary, the implemented digital painting is built using 
+    the implemented digital painting is built using 
     HTML, CSS, and JavaScript. In this painting, you will be able to utilize 
     various tools such as a brush, eraser, color picker, and brush width adjustment.
     Additionally, you can save color settings and also save the image of your artwork.
